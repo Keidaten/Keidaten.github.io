@@ -76,8 +76,8 @@ a {
 
 .hebergements {
     grid-area: grid_hebergements;
-    color: var(--main-blue);
-    border-color: var(--main-blue);
+    /* color: var(--main-blue); */
+    border-color: var(--grey);
 }
 
 .activites {
@@ -86,7 +86,8 @@ a {
     border-color: var(--grey);
 }
 
-.activites:active {
+.activites:active,
+.hebergements:active {
     color: var(--main-blue);
     border-color: var(--main-blue);
 }
@@ -108,7 +109,8 @@ a {
     .hebergements {
         margin-left: auto;
     }
-    .activites {
+    .activites,
+    .hebergements {
         border-color: var(--grey);
     }
     .inscription {
@@ -289,6 +291,7 @@ figure {
     background-color: var(--grey);
     padding: 5px;
     border-radius: 20px;
+    margin: 0px;
     margin-bottom: 12px;
     height: 144px;
     width: 335px;
@@ -538,15 +541,62 @@ footer li {
     }
 }
 
-/* @media all and (min-width: 376px) and (max-width: 991px) {
-    footer {
-        display: flex;
-        flex-wrap: wrap;
+@media (max-width: 362px) {
+    .popular figure .description {
+        /* top: -15px;
+        right: 0px; */
+        font-size: 15px;
     }
-    footer div {
-        min-width: 262px;
+    .popular {
+        padding: 0px;
     }
-} */
+    .hotels {
+        padding: 0px;
+    }
+    .hotels figure {
+        width: 100%;
+    }
+    .hotels figure img {
+        width: 100%;
+    }
+    .sorties {
+        padding: 1px;
+    }
+    .sorties figure {
+        width: 100%;
+    }
+    .sorties figure img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 322px) {
+    .popular figure .description {
+        top: -141px;
+        right: -146px;
+    }
+}
+
+@media (max-width: 292px) {
+    .popular figure .description {
+        width: 48%;
+    }
+    .popular figure .fa-star {
+        margin-top: 0px;
+    }
+    .popular figure .fa-star {
+        margin-top: 0px;
+    }
+    .popular figure p {
+        margin-bottom: 3px;
+    }
+}
+
+@media (max-width: 350px) {
+    .searchbox {
+        min-width: 200px;
+    }
+}
 
 /*RESPONSIVE*/
 /* END FOOTER */
