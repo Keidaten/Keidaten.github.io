@@ -87,7 +87,9 @@ a {
 }
 
 .activites:active,
-.hebergements:active {
+.hebergements:active,
+.activites:hover,
+.hebergements:hover {
     color: var(--main-blue);
     border-color: var(--main-blue);
 }
