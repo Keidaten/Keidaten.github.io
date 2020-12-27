@@ -29,6 +29,11 @@ html {
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* END GLOBAL*/
 
 /* $ HEADER*/
@@ -40,15 +45,6 @@ nav {
     grid-template-areas:
         "grid_logo grid_inscription"
         "grid_hebergements grid_activites";
-}
-
-header a {
-    text-decoration: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
 }
 
 .logo {
@@ -76,13 +72,11 @@ a {
 
 .hebergements {
     grid-area: grid_hebergements;
-    /* color: var(--main-blue); */
     border-color: var(--grey);
 }
 
 .activites {
     grid-area: grid_activites;
-    color: black;
     border-color: var(--grey);
 }
 
@@ -94,37 +88,8 @@ a {
     border-color: var(--main-blue);
 }
 
-/* $ RESPONSIVE*/
-@media (min-width: 992px) {
-    nav {
-        padding: 0 20px;
-        display: flex;
-    }
-    .activites,
-    .hebergements {
-        padding-bottom: 0px;
-        border-bottom: none;
-        width: 162px;
-        padding-top: 45px;
-        border-top: solid 2px;
-    }
-    .hebergements {
-        margin-left: auto;
-    }
-    .activites,
-    .hebergements {
-        border-color: var(--grey);
-    }
-    .inscription {
-        order: 4;
-        padding: 46px 0 0 0;
-        width: 162px;
-        text-align: center;
-    }
-    .logo {
-        padding: 63px 0 0 0;
-    }
-}
+/* RESPONSIVE*/
+
 /*RESPONSIVE*/
 /*END HEADER*/
 
@@ -261,12 +226,32 @@ button:focus {
     padding-left: 10px;
 }
 
+figure:hover {
+    transform: scale(1.1);
+}
+
 figure {
+    background-color: var(--grey);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 0px;
+    margin-bottom: 12px;
+    height: 144px;
+    width: 335px;
+    box-shadow: 0px 8px 15px var(--dark-grey);
     transition: all 0.2s ease-in-out;
 }
 
-figure:hover {
-    transform: scale(1.1);
+.fa-star {
+    font-size: 12px;
+}
+
+.grey {
+    color: var(--dark-grey);
+}
+
+.blue {
+    color: var(--main-blue);
 }
 
 /* $ POPULARS */
@@ -287,17 +272,6 @@ h2 {
 
 .fa-chart-line {
     font-size: 1.5em;
-}
-
-figure {
-    background-color: var(--grey);
-    padding: 5px;
-    border-radius: 20px;
-    margin: 0px;
-    margin-bottom: 12px;
-    height: 144px;
-    width: 335px;
-    box-shadow: 0px 8px 15px var(--dark-grey);
 }
 
 .popular figure {
@@ -333,18 +307,6 @@ figure .description p {
 
 .popular figure .fa-star {
     margin-top: 23px;
-}
-
-.fa-star {
-    font-size: 12px;
-}
-
-.grey {
-    color: var(--dark-grey);
-}
-
-.blue {
-    color: var(--main-blue);
 }
 
 /* $ HOTELS */
@@ -450,6 +412,7 @@ footer h3 {
 footer li {
     padding-bottom: 11px;
 }
+/* END FOOTER */
 
 /*RESPONSIVE*/
 
@@ -466,6 +429,20 @@ footer li {
 }
 
 @media (min-width: 1199px) {
+    .search-icon:before {
+        content: "Rechercher";
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+    }
+    .search-icon .fa-search {
+        display: none;
+        min-width: 52px;
+    }
+    .search-icon {
+        min-width: 134px;
+        border-radius: 0 10px 10px 0;
+    }
     .contain {
         padding: 0 50px;
     }
@@ -479,7 +456,6 @@ footer li {
         justify-content: space-around;
         padding: 0 50px;
     }
-
     figure {
         margin: 15px;
     }
@@ -494,7 +470,6 @@ footer li {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 196px 40px 44px 165px;
     }
-
     .box1 {
         grid-row: 1 / span 4;
     }
@@ -529,11 +504,36 @@ footer li {
     }
     .sorties img {
         height: 100%;
-        border-radius: 0 0 20px 20px;
+        border-radius: 20px;
     }
 }
 
 @media (min-width: 992px) {
+    nav {
+        padding: 0 20px;
+        display: flex;
+    }
+    .activites,
+    .hebergements {
+        width: 162px;
+        padding-bottom: 0px;
+        padding-top: 45px;
+        border-bottom: none;
+        border-top: solid 2px;
+        border-color: var(--grey);
+    }
+    .hebergements {
+        margin-left: auto;
+    }
+    .inscription {
+        order: 1;
+        padding: 46px 0 0 0;
+        width: 162px;
+        text-align: center;
+    }
+    .logo {
+        padding: 63px 0 0 0;
+    }
     footer {
         display: flex;
         flex-wrap: nowrap;
@@ -545,15 +545,25 @@ footer li {
 
 @media (max-width: 362px) {
     .popular figure .description {
-        /* top: -15px;
-        right: 0px; */
         font-size: 15px;
+        width: 150px;
+        right: 10px;
+    }
+    figure .description h4 {
+        margin-bottom: 14px;
+        white-space: break-spaces;
+    }
+    .searching {
+        padding: 10px;
     }
     .popular {
         padding: 0px;
     }
     .popular figure {
         width: 100%;
+    }
+    .popular figure img {
+        width: 30%;
     }
     .hotels {
         padding: 0px;
@@ -573,35 +583,9 @@ footer li {
     .sorties figure img {
         width: 100%;
     }
-}
-
-@media (max-width: 322px) {
-    .popular figure .description {
-        top: -155px;
-        right: -146px;
-    }
-}
-
-@media (max-width: 292px) {
-    .popular figure .description {
-        width: 48%;
-    }
-    .popular figure .fa-star {
-        margin-top: 0px;
-    }
-    .popular figure .fa-star {
-        margin-top: 0px;
-    }
-    .popular figure p {
-        margin-bottom: 3px;
-    }
-}
-
-@media (max-width: 350px) {
     .searchbox {
-        min-width: 200px;
+        min-width: 150px;
     }
 }
 
 /*RESPONSIVE*/
-/* END FOOTER */
