@@ -2,10 +2,6 @@
 * {
     box-sizing: border-box;
 }
-
-body {
-    margin: 0px;
-}
 /*RESET*/
 
 /* $ GLOBAL*/
@@ -21,12 +17,13 @@ body {
     font-family: raleway, sans-serif;
 }
 
-body {
-    background-color: var(--background-white);
-}
-
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-white);
+    margin: 0px;
 }
 
 a {
@@ -88,12 +85,11 @@ nav {
     border-color: var(--main-blue);
 }
 
-/* RESPONSIVE*/
-
-/*RESPONSIVE*/
 /*END HEADER*/
 
 /* $ MAIN */
+
+/* $ SEARCHZONE */
 .searching {
     padding: 20px;
 }
@@ -225,6 +221,10 @@ button:focus {
 .info p {
     padding-left: 10px;
 }
+
+/* END SEARCHZONE */
+
+/* $ RESULTS */
 
 figure:hover {
     transform: scale(1.1);
