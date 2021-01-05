@@ -149,6 +149,10 @@ nav {
     font-size: 19px;
 }
 
+.fa-search {
+    color: white;
+}
+
 .filters button {
     max-height: 50px;
     padding: 0px;
