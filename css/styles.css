@@ -461,7 +461,7 @@ footer li {
         padding: 0 50px;
     }
     figure {
-        margin: 15px;
+        margin: 0 15px 0 15px;
     }
     .hotels figure {
         width: 246px;
@@ -501,7 +501,7 @@ footer li {
     }
     .sorties figure h4 {
         position: relative;
-        top: -68px;
+        top: -75px;
         background-color: white;
         padding: 16px;
         border-radius: 0 0 20px 20px;
